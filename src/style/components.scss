@@ -1,0 +1,72 @@
+/******  btn *******/
+@import "./vari";
+.btn{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  @extend %btn-height;
+}
+.btn-primary {
+  color: #fff;
+  background-color: $highlight-color;
+  border-color: $highlight-color;
+}
+.btn-large{
+  padding-top:15px;padding-bottom:15px;width:100%;display:block;
+}
+
+
+
+
+
+
+/******* input ******/
+
+.form-group{
+  margin-bottom:$gb-margin-grip;
+}
+.form-hori label, .form-hori input[type=text], .form-hori select{
+  @extend %block;
+}
+
+%hori-form-control{
+  width:100%;display:block;
+  border-radius:1px;
+  background-color:$bg-color;
+
+  color:#fff;
+  border:1px solid $gb-color;
+  @extend %btn-height;
+}
+%btn-height{
+  padding:10px;line-height:1.5;
+}
+
+.form-hori input[type=text],.form-hori input[type=tel],.form-hori input[type=number], .form-hori select, .form-hori textarea{
+  @extend %hori-form-control;
+
+}
+.form-hori .auth {
+  .auth-input{
+    width:60%;float:left;
+  }
+  .auth-btn{
+    width:35%;float:right;
+  }
+}
