@@ -22,13 +22,21 @@
   border-radius: 2px;
   @extend %btn-height;
 }
+
+@mixin btn-style($bg-color, $color:#fff){
+  color:$color;
+  background-color:$bg-color;
+  border-color:$bg-color;
+}
 .btn-primary {
-  color: #fff;
-  background-color: $highlight-color;
-  border-color: $highlight-color;
+  @include btn-style($highlight-color);
 }
 .btn-large{
   padding-top:15px;padding-bottom:15px;width:100%;display:block;
+}
+.btn-gray{
+  @include btn-style($btn-gray);
+
 }
 
 
@@ -60,6 +68,11 @@
 
 .form-hori input[type=text],.form-hori input[type=tel],.form-hori input[type=number], .form-hori select, .form-hori textarea{
   @extend %hori-form-control;
+
+}
+.body-gray .form-hori input[type=text],.body-gray .form-hori input[type=tel],.body-gray .form-hori input[type=number],.body-gray  .form-hori select,.body-gray  .form-hori textarea{
+ background-color: #fff;
+  border-color:#d2d2d2;
 
 }
 .form-hori .auth {

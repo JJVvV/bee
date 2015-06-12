@@ -84,3 +84,20 @@ $step-bar-margin:16.666666666%;
   }
 
 }
+
+
+/********* »î¶¯ ********/
+.body-gray{
+  background-color:$gray-little;
+}
+.wrapper > header .title{
+  color:$highlight-color;
+  position:relative;
+  span{
+    position:relative;z-index:1;
+    background-color:$gray-little;padding: 0 5px;
+  }
+  hr{
+    margin-top:-15px;border-color:$highlight-color;
+  }
+}
