@@ -84,3 +84,46 @@ $step-bar-margin:16.666666666%;
   }
 
 }
+
+
+/********* 活动 ********/
+.body-gray{
+  background-color:$gray-little;
+}
+.wrapper > header .title{
+  color:$highlight-color;
+  position:relative;
+  span{
+    position:relative;z-index:1;
+    background-color:$gray-little;padding: 0 5px;
+  }
+  hr{
+    margin-top:-15px;border:1px solid $highlight-color;
+  }
+}
+
+%success-logo-info{
+  text-align:center;margin-top:50px;
+}
+.success-logo{
+  @extend %success-logo-info;
+}
+.success-logo-inner{
+  display:inline-block;position:relative;
+
+}
+.success-info{
+  @extend %success-logo-info;
+  color:$highlight-color;
+}
+
+/******* 預約成功 **********/
+.appoinment .section-form .footer {
+  margin-top:80px;
+}
+.appoinment .success-logo .check-mark{
+  position:absolute;left:50%;top:50%;
+  margin-left: -60px;
+  margin-top: -40px;
+  width:100px;
+}

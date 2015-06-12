@@ -22,13 +22,21 @@
   border-radius: 2px;
   @extend %btn-height;
 }
+
+@mixin btn-style($bg-color, $color:#fff){
+  color:$color;
+  background-color:$bg-color;
+  border-color:$bg-color;
+}
 .btn-primary {
-  color: #fff;
-  background-color: $highlight-color;
-  border-color: $highlight-color;
+  @include btn-style($highlight-color);
 }
 .btn-large{
   padding-top:15px;padding-bottom:15px;width:100%;display:block;
+}
+.btn-gray{
+  @include btn-style($btn-gray);
+
 }
 
 
@@ -62,6 +70,11 @@
   @extend %hori-form-control;
 
 }
+.body-gray .form-hori input[type=text],.body-gray .form-hori input[type=tel],.body-gray .form-hori input[type=number],.body-gray  .form-hori select,.body-gray  .form-hori textarea{
+ background-color: #fff;
+  border-color:#d2d2d2;
+  color:#333;
+}
 .form-hori .auth {
   .auth-input{
     width:60%;float:left;
@@ -69,4 +82,67 @@
   .auth-btn{
     width:35%;float:right;
   }
+}
+
+
+$sexangle-width:80px;
+$sexangle-height:$sexangle-width * 1.7320508075689;
+$sexangle-color:$highlight-color !default;
+
+%sexangle-content{
+  content:'';
+  position:absolute;
+  width:0;height:0;
+  border-style:solid;
+  top:0;
+}
+
+.sexangle{
+  width:$sexangle-width;height:$sexangle-height;display:inline-block;position:relative;background-color:$sexangle-color;
+
+  &:before{
+    @extend %sexangle-content;
+    border-color:transparent $sexangle-color transparent transparent;
+    border-width:$sexangle-height/2 $sexangle-width/2 $sexangle-height/2 0;
+    right:100%;
+  }
+  &:after{
+    @extend %sexangle-content;
+    border-color:transparent transparent transparent $sexangle-color;
+    border-width:$sexangle-height/2 0 $sexangle-height/2 $sexangle-width/2;
+    left:100%;
+
+  }
+}
+
+
+$check-mark-dec-width:12px;
+%check-mark-dec{
+  content:'';
+  width:$check-mark-dec-width;
+  display:inline-block;
+  border-radius:5px;
+
+  background-color:#fff;
+}
+
+
+.check-mark{
+
+  position:relative;
+
+  color:#fff ;
+  display:inline-block;
+
+  &:before{
+    @extend %check-mark-dec;
+    transform: rotateZ(-55deg);
+    height:45px;
+  }
+  &:after{
+    @extend %check-mark-dec;
+    transform: rotateZ(37deg) translate(15px, -15px);
+    height:70px;
+  }
+
 }
