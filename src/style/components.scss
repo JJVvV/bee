@@ -66,11 +66,11 @@
   padding:10px;line-height:1.5;
 }
 
-.form-hori input[type=text],.form-hori input[type=tel],.form-hori input[type=number], .form-hori select, .form-hori textarea{
+.form-hori input[type=text],.form-hori input[type=date], .form-hori input[type=tel],.form-hori input[type=number], .form-hori select, .form-hori textarea{
   @extend %hori-form-control;
 
 }
-.body-gray .form-hori input[type=text],.body-gray .form-hori input[type=tel],.body-gray .form-hori input[type=number],.body-gray  .form-hori select,.body-gray  .form-hori textarea{
+.body-gray .form-hori input[type=text],,.form-hori input[type=date],.body-gray .form-hori input[type=tel],.body-gray .form-hori input[type=number],.body-gray  .form-hori select,.body-gray  .form-hori textarea{
  background-color: #fff;
   border-color:#d2d2d2;
   color:#333;
@@ -137,11 +137,18 @@ $check-mark-dec-width:12px;
   &:before{
     @extend %check-mark-dec;
     transform: rotateZ(-55deg);
+    -webkit-transform: rotateZ(-55deg);
+    -moz-transform: rotateZ(-55deg);
+
+
     height:45px;
   }
   &:after{
     @extend %check-mark-dec;
     transform: rotateZ(37deg) translate(15px, -15px);
+    -webkit-transform: rotateZ(37deg) translate(15px, -15px);
+    -moz-transform: rotateZ(37deg) translate(15px, -15px);
+
     height:70px;
   }
 
