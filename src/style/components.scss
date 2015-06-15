@@ -42,6 +42,15 @@
 
 
 
+/****简介******/
+.header{text-align: center;}
+.headerbox{width: 100%;background-image: url("/src/img/background.jpg") ;min-height:140px;text-align: center; display:table;}
+.headerbox span{color: #ffffff;font-size: 40px;display:table-cell;vertical-align:middle;}
+.content p{font-size: 20px;}
+.content .footer button{margin-top: 50px;}
+
+.form-hori input[type=text]:focus,.form-hori input[type=tel]:focus,.form-hori input[type=number]:focus,.form-hori input[type=date]:focus, .form-hori select:focus, .form-hori textarea:focus{
+ border:1px solid $highlight-color;  }
 
 
 /******* input ******/
@@ -49,28 +58,34 @@
 .form-group{
   margin-bottom:$gb-margin-grip;
 }
-.form-hori label, .form-hori input[type=text], .form-hori select{
+
+.form-select{-webkit-appearance: none;}
+.form-hori label, .form-hori input[type=text],.form-hori input[type=date], .form-hori select{
   @extend %block;
 }
-
 %hori-form-control{
   width:100%;display:block;
   border-radius:1px;
   background-color:$bg-color;
-
+  -webkit-appearance: none;
   color:#fff;
   border:1px solid $gb-color;
   @extend %btn-height;
 }
+
+
+
 %btn-height{
   padding:10px;line-height:1.5;
 }
-
-.form-hori input[type=text],.form-hori input[type=date], .form-hori input[type=tel],.form-hori input[type=number], .form-hori select, .form-hori textarea{
+.date-time{
+  height: 46px;
+}
+.form-hori input[type=text],.form-hori input[type=tel],.form-hori input[type=number] ,.form-hori input[type=date], .form-hori select, .form-hori textarea{
   @extend %hori-form-control;
 
 }
-.body-gray .form-hori input[type=text],,.form-hori input[type=date],.body-gray .form-hori input[type=tel],.body-gray .form-hori input[type=number],.body-gray  .form-hori select,.body-gray  .form-hori textarea{
+.body-gray .form-hori input[type=text],.body-gray .form-hori input[type=tel],.body-gray .form-hori input[type=number],.body-gray .form-hori input[type=date],.body-gray  .form-hori select,.body-gray  .form-hori textarea{
  background-color: #fff;
   border-color:#d2d2d2;
   color:#333;
@@ -136,20 +151,22 @@ $check-mark-dec-width:12px;
 
   &:before{
     @extend %check-mark-dec;
-    transform: rotateZ(-55deg);
-    -webkit-transform: rotateZ(-55deg);
+//    在这里添加个webkit
+    -webkit-transform:rotateZ(-55deg);
     -moz-transform: rotateZ(-55deg);
-
-
+    -ms-transform: rotateZ(-55deg);
+    -o-transform: rotateZ(-55deg);
     height:45px;
   }
   &:after{
+    //在这里还要添加个webkit
     @extend %check-mark-dec;
-    transform: rotateZ(37deg) translate(15px, -15px);
     -webkit-transform: rotateZ(37deg) translate(15px, -15px);
     -moz-transform: rotateZ(37deg) translate(15px, -15px);
-
+    -ms-transform: rotateZ(37deg) translate(15px, -15px);
+    -o-transform: rotateZ(37deg) translate(15px, -15px);
     height:70px;
   }
 
 }
+
