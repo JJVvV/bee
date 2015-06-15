@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   devtool: 'eval',
   entry: [
@@ -15,7 +15,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin("bundle.css")
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -29,9 +30,12 @@ module.exports = {
       },
       {
         test: /\.css|\.scss/,
-        loaders:['style', 'css', 'sass']
+        //loaders:['style', 'css', 'sass']
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
       }
     ]
   },
-    debug:true
+
+    debug:false
+
 };
